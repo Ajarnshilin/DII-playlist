@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import songJson from "../song.json"
+import Recommend from "../Content/Recommend"
+import Header from "./Header";
+import Playlist from "../Content/Playlist";
 
 const Container = styled.div`
   width: 85%;
@@ -16,22 +18,6 @@ const Wrapper = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-`;
-
-const Pic = styled.div`
-  width: 10rem;
-  height: 10rem;
-  background-color: #f5ce7a;
-  border:5px solid black;
-  padding: 2rem;
-  
-  span {
-    font-size: 10rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 `;
 
 const Text = styled.div`
@@ -136,21 +122,6 @@ const Refresh = styled.button`
   }
 `;
 
-const Header = styled.div`
-  margin: 2rem 0 2rem 0;
-  display: flex;
-  flex-direction: row;
-
-`
-const RightHeader = styled.div`
-  margin-left: 2rem;
-  h1 {
-    font-size:3rem;
-    font-weight:600;
-    margin-bottom: 1rem;
-    /* margin: 2rem 0 1rem 0; */
-  }
-`
 const Footer = styled.div`
 display: flex;
 align-items: center;
@@ -164,36 +135,10 @@ function Content() {
     <Container>
       <Wrapper>
       <Text>
-      <Header>
-        <Pic>
-          <span>M</span>
-        </Pic>
-        <RightHeader>
-          <h1>MY PLAYLIST</h1>
-          <span>CREART BY Ajarnshilin: 2 song ,7 min 44 sec</span>
-          </RightHeader>
-          </Header>
-            <SongContainer>
-              <AddedSongTitle>TITLE</AddedSongTitle>
-              <AddedSongArtist>NAME</AddedSongArtist>
-              <AddedSongDuration>DURATION</AddedSongDuration>
-            </SongContainer>
-            <SongContainer>
-              <SongTitle>Mock</SongTitle>
-              <SongArtist>Mock</SongArtist>
-              <SongDuration>1:00</SongDuration>
-              <Remove type="submit">Remove</Remove>
-          </SongContainer>
+          <Header/>
+          <Playlist/>
           <h2>Recommended Songs</h2>
-            {songJson.slice(0,5).sort((a,b) => Math.random() - Math.random()).map((item, key) => (
-              <SongContainer key={item.id}>
-                <SongTitle>{item.title}</SongTitle>
-                <SongArtist>{item.artist}</SongArtist>
-                <SongDuration>{item.duration}</SongDuration>
-                <Add type="submit">Add</Add>
-                {/* <Add type="submit">Remove</Add> */}
-              </SongContainer>
-            ))}
+          <Recommend/>
         </Text>
         <Footer>
           <Refresh type="submit">Refresh</Refresh>
