@@ -206,7 +206,6 @@ function NavBar(callback) {
             </Modal>
           </Action>
              {/* {play.map( (item) => (<p>{item.name}</p>))} */}
-              <Logout>Logout</Logout>
         </ActionContainer>
       </Wrapper>
     </Container>
