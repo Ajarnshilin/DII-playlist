@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NavBar from "../components/Navbar";
-import Content from "../components/Content";
+import Content from "../components/Content/index";
 
 const Container = styled.div`
   width: 100vw;
