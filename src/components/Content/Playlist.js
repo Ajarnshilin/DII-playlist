@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import RemoveSong from "../Button/RemoveSong";
+import songJson from "../../song.json"
 
 const SongContainer = styled.div`
   width: 70vw;
@@ -68,12 +70,9 @@ function Playlist() {
               <AddedSongArtist>NAME</AddedSongArtist>
               <AddedSongDuration>DURATION</AddedSongDuration>
         </SongContainer>
-        <SongContainer>
-              <SongTitle>Mock</SongTitle>
-              <SongArtist>Mock</SongArtist>
-              <SongDuration>1:00</SongDuration>
-              <Remove type="submit">Remove</Remove>
-          </SongContainer>
+        {songJson.slice(0,5).sort((a,b) => Math.random() - Math.random()).map((item, key) => (
+            <RemoveSong props={item}/>
+        ))}
         </>
     )
 }
