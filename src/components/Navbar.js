@@ -8,7 +8,7 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 15%;
   height: 100vh;
-  background-color: #636363;
+  background-color:#131313;
   margin: 0;
   padding: 0;
   border-right: 5px solid black;
@@ -22,27 +22,21 @@ const HeaderWrapper = styled.div`
 `;
 
 const NewPlaylist = styled.span`
+  margin-top:0.5rem;
   font-size:1.5rem;
   font-weight: 600;
   display: flex;
   color: #fff;
   flex-direction: column;
- justify-content: center; 
+  justify-content: center;
+  cursor: pointer;x
 `;
-const Logout = styled.span`
-  font-size:1.5rem;
-  font-weight: 600;
-  display: flex;
-  color: #fff;
-  flex-direction: column;
-  margin-top: 38rem;
-  justify-content: center; 
- `;
 const Close = styled.div`
   font-size:2rem;
   display: flex;
   flex-direction: column;
   align-items:right;
+  cursor: pointer;
 `;
 
 const HeroText = styled.span`
@@ -127,28 +121,6 @@ const Title = styled.span`
 function NavBar(callback) {
   const [modalIsOpen ,setModalIsOpen ] = useState(false)
 
-  // const [play, setPlay] = useState([])
-
-  // const [name ,setName] = useState("")
-
-  // const [isSubmitting] = useState(false);
-
-  // const handleSubmit = (e) => {
-  //   storePlaylist(name) 
-  // };
-
-  // useEffect(() => {
-  //   if (isSubmitting) {
-  //     callback();
-  //   }
-  // }, 
-  // // []
-  // );
-
-  // useEffect(() => {
-  //   getPlaylist(1).then(response => setPlay(response))
-  // } ,[])
-  // console.log(play)
 
   return (
     <Container>
@@ -187,7 +159,7 @@ function NavBar(callback) {
             >
               <HeaderWrapper>
                 <HeroText>Create Playlist</HeroText>
-              <Close onClick={() => setModalIsOpen(false)}>X</Close>
+                <Close onClick={() => setModalIsOpen(false)}>X</Close>
               </HeaderWrapper>
                 <Form 
                 >
@@ -206,7 +178,6 @@ function NavBar(callback) {
             </Modal>
           </Action>
              {/* {play.map( (item) => (<p>{item.name}</p>))} */}
-              <Logout>Logout</Logout>
         </ActionContainer>
       </Wrapper>
     </Container>

@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import songJson from "../song.json"
+import Recommend from "../Content/Recommend"
+import Header from "./Header";
+import Playlist from "../Content/Playlist";
 
 const Container = styled.div`
   width: 85%;
   height: 100%;
-  background-color: #ffff;
-  margin-left: 15rem;
+  background-color: #282828;
+  margin-left: 13.5rem;
   padding: 0;
   overflow-x: hidden;
+  color:#fff;
 `;
 
 const Wrapper = styled.div`
@@ -18,29 +21,14 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Pic = styled.div`
-  width: 10rem;
-  height: 10rem;
-  background-color: #f5ce7a;
-  border:5px solid black;
-  padding: 2rem;
-  
-  span {
-    font-size: 10rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-
 const Text = styled.div`
-  margin-left: 2rem;
+  margin-left: 3rem;
   font-size: 1.25rem;
   h2 {
     font-size: 2rem;
     font-weight: 600;
-    margin-top: 1rem;
+    margin-top: 4rem;
+    margin-bottom:2rem;
   }
 `;
 const SongContainer = styled.div`
@@ -50,9 +38,10 @@ const SongContainer = styled.div`
   justify-content: center;
   align-items: center;
   /* margin-top: 0.5rem; */
-  border-bottom: solid #e6e6e6;
+  border-bottom: solid #919496;
   flex: 0.5;
   display: flex;
+  color:#fff;
 `
 
 const SongTitle = styled.div`
@@ -74,7 +63,7 @@ const AddedSongTitle = styled.div`
   flex: 1;
   display: flex;
   margin: 1rem;
-  color: grey;
+  color: #919496;
 `
 const AddedSongArtist = styled.div`
   flex: 1;
@@ -96,7 +85,7 @@ const Remove = styled.button`
   color: black;
   font-size: 1rem;
   outline: none;
-  border-radius: 50%;
+  border-radius: 45px;
 
   cursor: pointer;
   &:hover {
@@ -112,7 +101,7 @@ const Add = styled.button`
   color: black;
   font-size: 1rem;
   outline: none;
-  border-radius: 50%;
+  border-radius: 45px;
 
   cursor: pointer;
   &:hover {
@@ -128,7 +117,7 @@ const Refresh = styled.button`
   color: black;
   font-size: 1rem;
   outline: none;
-  border-radius: 50%;
+  border-radius: 45px;
   margin: 1rem;
   cursor: pointer;
   &:hover {
@@ -136,21 +125,6 @@ const Refresh = styled.button`
   }
 `;
 
-const Header = styled.div`
-  margin: 2rem 0 2rem 0;
-  display: flex;
-  flex-direction: row;
-
-`
-const RightHeader = styled.div`
-  margin-left: 2rem;
-  h1 {
-    font-size:3rem;
-    font-weight:600;
-    margin-bottom: 1rem;
-    /* margin: 2rem 0 1rem 0; */
-  }
-`
 const Footer = styled.div`
 display: flex;
 align-items: center;
@@ -164,36 +138,10 @@ function Content() {
     <Container>
       <Wrapper>
       <Text>
-      <Header>
-        <Pic>
-          <span>M</span>
-        </Pic>
-        <RightHeader>
-          <h1>MY PLAYLIST</h1>
-          <span>CREART BY Ajarnshilin: 2 song ,7 min 44 sec</span>
-          </RightHeader>
-          </Header>
-            <SongContainer>
-              <AddedSongTitle>TITLE</AddedSongTitle>
-              <AddedSongArtist>NAME</AddedSongArtist>
-              <AddedSongDuration>DURATION</AddedSongDuration>
-            </SongContainer>
-            <SongContainer>
-              <SongTitle>Mock</SongTitle>
-              <SongArtist>Mock</SongArtist>
-              <SongDuration>1:00</SongDuration>
-              <Remove type="submit">Remove</Remove>
-          </SongContainer>
+          <Header/>
+          <Playlist/>
           <h2>Recommended Songs</h2>
-            {songJson.slice(0,5).sort((a,b) => Math.random() - Math.random()).map((item, key) => (
-              <SongContainer key={item.id}>
-                <SongTitle>{item.title}</SongTitle>
-                <SongArtist>{item.artist}</SongArtist>
-                <SongDuration>{item.duration}</SongDuration>
-                <Add type="submit">Add</Add>
-                {/* <Add type="submit">Remove</Add> */}
-              </SongContainer>
-            ))}
+          <Recommend/>
         </Text>
         <Footer>
           <Refresh type="submit">Refresh</Refresh>
