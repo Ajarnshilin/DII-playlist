@@ -35,7 +35,7 @@ export function SongManager() {
     const { song, time } = songState
 
     const addSong = useCallback((payload, timeInput) => songDispatch({type: "ADD_SONG", payload: payload, time: timeInput}), [songDispatch])
-    const deleteSong = useCallback((payload, timeInput) => songDispatch({type: "ADD_SONG", payload: payload, time: timeInput}), [songDispatch])
+    const deleteSong = useCallback((payload, timeInput) => songDispatch({type: "DELETE_SONG", payload: payload, time: timeInput}), [songDispatch])
 
     const state = useMemo(() => ({ song, time }), [song, time])
     const dispatcher = useMemo(() => ({ addSong, deleteSong, song }), [addSong, deleteSong, song])
