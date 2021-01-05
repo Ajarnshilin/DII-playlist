@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import Modal from 'react-modal';
 import styled from "styled-components";
-import { getPlaylist } from "./../services/APIsong";
-import { storePlaylist } from "./../services/APIsong";
+// import { getPlaylist } from "./../services/APIsong";
+// import { storePlaylist } from "./../services/APIsong";
 
 const Container = styled.div`
   width: 15%;
@@ -127,28 +127,28 @@ const Title = styled.span`
 function NavBar(callback) {
   const [modalIsOpen ,setModalIsOpen ] = useState(false)
 
-  const [play, setPlay] = useState([])
+  // const [play, setPlay] = useState([])
 
-  const [name ,setName] = useState("")
+  // const [name ,setName] = useState("")
 
-  const [isSubmitting] = useState(false);
+  // const [isSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
-    storePlaylist(name) 
-  };
+  // const handleSubmit = (e) => {
+  //   storePlaylist(name) 
+  // };
 
-  useEffect(() => {
-    if (isSubmitting) {
-      callback();
-    }
-  }, 
-  // []
-  );
+  // useEffect(() => {
+  //   if (isSubmitting) {
+  //     callback();
+  //   }
+  // }, 
+  // // []
+  // );
 
-  useEffect(() => {
-    getPlaylist(1).then(response => setPlay(response))
-  } ,[])
-  console.log(play)
+  // useEffect(() => {
+  //   getPlaylist(1).then(response => setPlay(response))
+  // } ,[])
+  // console.log(play)
 
   return (
     <Container>
@@ -189,24 +189,23 @@ function NavBar(callback) {
                 <HeroText>Create Playlist</HeroText>
               <Close onClick={() => setModalIsOpen(false)}>X</Close>
               </HeaderWrapper>
-                <Form onSubmit={handleSubmit}>
+                <Form 
+                >
                   <Title>Name</Title>
 
                   <Input
                     type="text"
                     name="playlist"
                     id="playlist"
-                    // value={values.playlist}
-                    onChange={ (e) => {setName(e.target.value)}}
+                    // onChange={ (e) => {setName(e.target.value)}}
                   ></Input>
                   <ButtonContainer>
                     <Button type="submit">Create</Button>
                   </ButtonContainer>
                 </Form>
             </Modal>
-            {/* <Link to="/Newplaylist">+ New Playlist</Link>           */}
           </Action>
-             {play.map( (item) => (<p>{item.name}</p>))}
+             {/* {play.map( (item) => (<p>{item.name}</p>))} */}
               <Logout>Logout</Logout>
         </ActionContainer>
       </Wrapper>
