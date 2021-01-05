@@ -7,10 +7,11 @@ import Playlist from "../Content/Playlist";
 const Container = styled.div`
   width: 85%;
   height: 100%;
-  background-color: #ffff;
-  margin-left: 15rem;
+  background-color: #282828;
+  margin-left: 13.5rem;
   padding: 0;
   overflow-x: hidden;
+  color:#fff;
 `;
 
 const Wrapper = styled.div`
@@ -21,12 +22,13 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.div`
-  margin-left: 2rem;
+  margin-left: 3rem;
   font-size: 1.25rem;
   h2 {
     font-size: 2rem;
     font-weight: 600;
-    margin-top: 1rem;
+    margin-top: 4rem;
+    margin-bottom:2rem;
   }
 `;
 const SongContainer = styled.div`
@@ -36,9 +38,10 @@ const SongContainer = styled.div`
   justify-content: center;
   align-items: center;
   /* margin-top: 0.5rem; */
-  border-bottom: solid #e6e6e6;
+  border-bottom: solid #919496;
   flex: 0.5;
   display: flex;
+  color:#fff;
 `
 
 const SongTitle = styled.div`
@@ -60,7 +63,7 @@ const AddedSongTitle = styled.div`
   flex: 1;
   display: flex;
   margin: 1rem;
-  color: grey;
+  color: #919496;
 `
 const AddedSongArtist = styled.div`
   flex: 1;
@@ -82,7 +85,7 @@ const Remove = styled.button`
   color: black;
   font-size: 1rem;
   outline: none;
-  border-radius: 50%;
+  border-radius: 45px;
 
   cursor: pointer;
   &:hover {
@@ -98,7 +101,7 @@ const Add = styled.button`
   color: black;
   font-size: 1rem;
   outline: none;
-  border-radius: 50%;
+  border-radius: 45px;
 
   cursor: pointer;
   &:hover {
@@ -114,7 +117,7 @@ const Refresh = styled.button`
   color: black;
   font-size: 1rem;
   outline: none;
-  border-radius: 50%;
+  border-radius: 45px;
   margin: 1rem;
   cursor: pointer;
   &:hover {
