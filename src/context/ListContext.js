@@ -1,16 +1,17 @@
-import React from 'react'
+import { useContext, useCallback, createContext, useMemo, useReducer } from 'react'
 
-export const ListContext = React.createContext({})
+export const ListContext = createContext({})
 
 const initialState = {
-    song : []
+    song : [],
+    time : 0
 }
 
 function songReducer(state, action){
     switch (action.type){
         case "ADD_SONG" : 
             return {
-                ...state, song: state.song.push(action.payload)
+                ...state, song: state.song.push(action.payload), time: state.time + action.time
             }
         case "DELETE_SONG" :
             return {
@@ -21,7 +22,7 @@ function songReducer(state, action){
     }
 }
 export function ListProvider({ children }) {
-    const [songState, songDispatch] = React.useReducer(songReducer, initialState)
+    const [songState, songDispatch] = useReducer(songReducer, initialState)
     return (
       <ListContext.Provider value={{ songState, songDispatch }}>
         {children}
@@ -29,18 +30,17 @@ export function ListProvider({ children }) {
     );
   }
 
-export function manageSong() {
-    const {songState, songDispatch } = React.useContext(ListContext)
-    
-    const { song } = songState
+export function SongManager() {
+    const {songState, songDispatch } = useContext(ListContext)
+    const { song, time } = songState
 
-    const addSong = React.useCallback((payload) => songDispatch({type: "ADD_SONG", payload}), [songDispatch])
-    const deleteSong = React.useCallback((payload) => songDispatch({type: "ADD_SONG", payload}), [songDispatch])
+    const addSong = useCallback((payload, timeInput) => songDispatch({type: "ADD_SONG", payload: payload, time: timeInput}), [songDispatch])
+    const deleteSong = useCallback((payload, timeInput) => songDispatch({type: "ADD_SONG", payload: payload, time: timeInput}), [songDispatch])
 
-    const state = React.useMemo(() => { song } )
-    const dispatcher = React.useMemo(() => { addSong, deleteSong, song }, [addSong, deleteSong, song])
+    const state = useMemo(() => ({ song, time }), [song, time])
+    const dispatcher = useMemo(() => ({ addSong, deleteSong, song }), [addSong, deleteSong, song])
 
-    return [state, dispatcher]
+    return [ state, dispatcher]
 }
 
 export default ListContext
