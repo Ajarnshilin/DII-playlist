@@ -28,13 +28,15 @@ const NewPlaylist = styled.span`
   display: flex;
   color: #fff;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
+  cursor: pointer;x
 `;
 const Close = styled.div`
   font-size:2rem;
   display: flex;
   flex-direction: column;
   align-items:right;
+  cursor: pointer;
 `;
 
 const HeroText = styled.span`
@@ -157,7 +159,7 @@ function NavBar(callback) {
             >
               <HeaderWrapper>
                 <HeroText>Create Playlist</HeroText>
-              <Close onClick={() => setModalIsOpen(false)}>X</Close>
+                <Close onClick={() => setModalIsOpen(false)}>X</Close>
               </HeaderWrapper>
                 <Form 
                 >
