@@ -29,6 +29,7 @@ const SongDuration = styled.div`
   margin: 1rem;
 `
 
+
 const Add = styled.button`
   height: 2rem;
   width: 4rem;
@@ -52,7 +53,6 @@ function AddSong({props}) {
               <SongArtist>{props.artist}</SongArtist>
               <SongDuration>{props.duration}</SongDuration>
               <Add type="submit">Add</Add>
-              {/* <Add type="submit">Remove</Add> */}
     </SongContainer>
 )    
 }
