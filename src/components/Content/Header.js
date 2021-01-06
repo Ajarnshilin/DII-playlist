@@ -33,10 +33,12 @@ const Pic = styled.div`
 `;
 
 function Header() {
+  const name ="Hello.spilt('')"
+  const text=name[0]
     return (
         <Head>
             <Pic>
-                <span>M</span>
+                <span>{text}</span>
             </Pic>
             <RightHeader>
                 <h1>MY PLAYLIST</h1>
