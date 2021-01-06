@@ -34,12 +34,14 @@ const Pic = styled.div`
 `;
 
 function Header() {
+  const name ="Hello.spilt('')"
+  const text=name[0]
   const { doge } = React.useContext(ListContextV2)
   const { idSong, setIdSong, dogwow, setDogwow } = doge
     return (
         <Head>
             <Pic>
-                <span>M</span>
+                <span>{text}</span>
             </Pic>
             <RightHeader>
                 <h1>MY PLAYLIST</h1>
