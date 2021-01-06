@@ -9,32 +9,14 @@ function Recommend(props) {
  
     return (
         <>
-        <Slide triggerOnce>
-        {RandomSongJson.sort((a,b) => Math.random() - Math.random()).slice(0,1).map((item, key) => (
-            <AddSong key={key}  props={item} />
+
+        {RandomSongJson.sort((a,b) => Math.random() - Math.random()).slice(0,5).map((item, key) => (
+            <Slide delay={10}>
+              <AddSong key={key}  props={item} />  
+            </Slide>
         ))}
-        <Slide triggerOnce >
-        {RandomSongJson.sort((a,b) => Math.random() - Math.random()).slice(0,1).map((item, key) => (
-            <AddSong key={key} props={item}/>
-        ))}
-        <Slide triggerOnce >
-        {RandomSongJson.sort((a,b) => Math.random() - Math.random()).slice(0,1).map((item, key) => (
-            <AddSong key={key} props={item}/>
-        ))}
-        <Slide triggerOnce >
-        {RandomSongJson.sort((a,b) => Math.random() - Math.random()).slice(0,1).map((item, key) => (
-            <AddSong key={key} props={item}/>
-        ))}
-        <Slide triggerOnce >
-        {RandomSongJson.sort((a,b) => Math.random() - Math.random()).slice(0,1).map((item, key) => (
-            <AddSong key={key} props={item}/>
-        ))}
-        
-        </Slide>
-        </Slide>
-        </Slide>
-        </Slide>
-        </Slide>
+
+     
         </>
     );
 }
