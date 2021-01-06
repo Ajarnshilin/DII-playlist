@@ -11,7 +11,6 @@ const Container = styled.div`
   background-color:#131313;
   margin: 0;
   padding: 0;
-  border-right: 5px solid black;
   position: fixed;
   overflow-x: hidden;
 `;
@@ -29,8 +28,9 @@ const NewPlaylist = styled.span`
   color: #fff;
   flex-direction: column;
   justify-content: center;
-  cursor: pointer;x
+  cursor: pointer;
 `;
+
 const Close = styled.div`
   font-size:2rem;
   display: flex;
@@ -80,10 +80,8 @@ const Input = styled.input`
   margin: 10px 0;
   padding: 5px 10px;
   height: 20px;
-  border: solid 3px black;
   outline: none;
   &:focus {
-    border: 1px solid #0c1737;
   }
 `;
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ListContextV2 } from '../../context/ListContextV2'
 
 const Head = styled.div`
-  margin: 2rem 0 2rem 0;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: row;
 
@@ -14,14 +14,12 @@ const RightHeader = styled.div`
     font-size:3rem;
     font-weight:600;
     margin-bottom: 1rem;
-    /* margin: 2rem 0 1rem 0; */
   }
 `
 const Pic = styled.div`
   width: 10rem;
   height: 10rem;
   background-color: #f5ce7a;
-  border:5px solid black;
   padding: 2rem;
   
   span {
@@ -45,7 +43,7 @@ function Header() {
             </Pic>
             <RightHeader>
                 <h1>{name[0]}</h1>
-                <span>CREART BY Ajarnshilin: {idSong.length} {idSong.length >=  2 ? "songs" : "song" }, {dogwow} sec</span>
+                <span>CREART BY {name[0]} {idSong.length} {idSong.length >=  2 ? "songs" : "song" }, {dogwow} sec</span>
             </RightHeader>
         </Head>
     );
