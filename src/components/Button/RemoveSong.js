@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ListContextV2 } from '../../context/ListContextV2'
 
 const SongContainer = styled.div`
   width: 70vw;
@@ -45,13 +46,21 @@ const Remove = styled.button`
   }
 `;
 
-function RemoveSong({props}) {
+function RemoveSong(props) {
+  const { doge } = React.useContext(ListContextV2)
+  const { idSong, setIdSong, dogwow, setDogwow } = doge
+
+  const handleClick = (id,time) => {
+    console.log(id)
+    setIdSong((idSong) => idSong.filter(e => e !== id))
+    setDogwow((dogwow) => dogwow-time)
+  }
     return (
-    <SongContainer key={props.id}>
-              <SongTitle>{props.title}</SongTitle>
-              <SongArtist>{props.artist}</SongArtist>
-              <SongDuration>{props.duration}</SongDuration>
-              <Remove type="submit">Remove</Remove>
+    <SongContainer >
+              <SongTitle>{props.item.title}</SongTitle>
+              <SongArtist>{props.item.artist}</SongArtist>
+              <SongDuration>{props.item.duration}</SongDuration>
+              <Remove onClick={() => handleClick(props.item.id,props.item.duration)}  >Remove</Remove>
     </SongContainer>
 )    
 }

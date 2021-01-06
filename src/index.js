@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { ListProvider } from './context/ListContext'
+import { ListProvider } from './context/ListContextV2'
 
 ReactDOM.render(
   <React.StrictMode>
