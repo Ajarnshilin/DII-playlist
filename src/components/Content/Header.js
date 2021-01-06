@@ -43,7 +43,7 @@ function Header() {
             </Pic>
             <RightHeader>
                 <h1>{name[0]}</h1>
-                <span>CREART BY Ajarnshilin: {idSong.length} {idSong.length >=  2 ? "songs" : "song" }, {dogwow} sec</span>
+                <span>CREART BY {name[0]} {idSong.length} {idSong.length >=  2 ? "songs" : "song" }, {dogwow} sec</span>
             </RightHeader>
         </Head>
     );

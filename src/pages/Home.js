@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import NavBar from "../components/Navbar";
 import Content from "../components/Content/index";
+import withHelmet from '../util/withHelmet'
 
 const Container = styled.div`
   width: 100vw;
@@ -10,6 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: hidden;
+  font-family: 'Nunito', sans-serif;
 `;
 
 function Home() {
@@ -20,4 +22,4 @@ function Home() {
     </Container>
   );
 }
-export default Home;
+export default withHelmet('Home')(Home);

@@ -33,7 +33,35 @@ const AddedSongDuration = styled.div`
   margin: 1rem;
   color: grey;
 `
-
+const SongTitle = styled.div`
+  flex: 1;
+  display: flex;
+  margin: 1rem;
+`
+const SongArtist = styled.div`
+  flex: 1;
+  display: flex;
+  margin: 1rem;
+`
+const SongDuration = styled.div`
+  flex: 1;
+  display: flex;
+  margin: 1rem;
+`
+const Remove = styled.button`
+  height: 2.5rem;
+  width: 5rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 1rem;
+  outline: none;
+  border-radius: 45px;
+  cursor: pointer;
+  &:hover {
+    background-color: #bd8584;
+  }
+`;
 function Playlist() {
   const { doge } = React.useContext(ListContextV2)
   const { idSong, setIdSong, dogwow, setDogwow } = doge
@@ -41,9 +69,9 @@ function Playlist() {
     return (
         <>
         <SongContainer>
-              <AddedSongTitle>TITLE</AddedSongTitle>
-              <AddedSongArtist>NAME</AddedSongArtist>
-              <AddedSongDuration>DURATION</AddedSongDuration>
+              <AddedSongTitle>Title</AddedSongTitle>
+              <AddedSongArtist>Name</AddedSongArtist>
+              <AddedSongDuration>Duration</AddedSongDuration>
         </SongContainer>
         {songJson.filter((item, index) => {
           if(idSong === null){

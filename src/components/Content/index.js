@@ -7,8 +7,9 @@ import Playlist from "../Content/Playlist";
 const Container = styled.div`
   width: 85%;
   height: 100%;
-  background-color: #282828;
-  margin-left: 15%;
+  background: rgb(9,9,9);
+background: linear-gradient(0deg, rgba(9,9,9,1) 39%, rgba(79,0,0,1) 100%);
+  margin-left: 20%;
   padding: 0;
   overflow-x: hidden;
   color:#fff;
@@ -16,7 +17,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 `;
@@ -74,37 +75,24 @@ const AddedSongDuration = styled.div`
   display: flex;
   margin: 1rem;
   color: grey;
-`
-const Remove = styled.button`
-  height: 2.5rem;
-  width: 5rem;
-  background-color: #deaead;
-  border: 0;
-  color: black;
-  font-size: 1rem;
-  outline: none;
-  border-radius: 45px;
-
-  cursor: pointer;
-  &:hover {
-    background-color: #bd8584;
-  }
-`;
-
+  `
 
 const Refresh = styled.button`
   height: 3rem;
   width: 5rem;
-  background-color: #ebc3a7;
-  border: 0;
-  color: black;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
   font-size: 1rem;
   outline: none;
   border-radius: 45px;
   margin: 3rem 3rem 3rem 3rem;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
   &:hover {
-    background-color: #c99c7d;
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s ease-in-out;
   }
 `;
 
