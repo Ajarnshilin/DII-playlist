@@ -6,10 +6,10 @@ import { ListContextV2 } from '../context/ListContextV2'
 import { Link } from 'react-router-dom'
 
 const Container = styled.div`
-  width: 15%;
+  width: 20%;
   height: 100vh;
-  background-color:#131313;
-  margin: 0;
+  background: rgb(17,17,17);
+background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(0,0,0,1) 100%);
   padding: 0;
   position: fixed;
   overflow-x: hidden;

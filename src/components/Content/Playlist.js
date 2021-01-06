@@ -51,13 +51,12 @@ const SongDuration = styled.div`
 const Remove = styled.button`
   height: 2.5rem;
   width: 5rem;
-  background-color: #deaead;
-  border: 0;
-  color: black;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
   font-size: 1rem;
   outline: none;
   border-radius: 45px;
-
   cursor: pointer;
   &:hover {
     background-color: #bd8584;
@@ -70,9 +69,9 @@ function Playlist() {
     return (
         <>
         <SongContainer>
-              <AddedSongTitle>TITLE</AddedSongTitle>
-              <AddedSongArtist>NAME</AddedSongArtist>
-              <AddedSongDuration>DURATION</AddedSongDuration>
+              <AddedSongTitle>Title</AddedSongTitle>
+              <AddedSongArtist>Name</AddedSongArtist>
+              <AddedSongDuration>Duration</AddedSongDuration>
         </SongContainer>
         {songJson.filter((item, index) => {
           if(idSong === null){

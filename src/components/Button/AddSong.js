@@ -29,19 +29,21 @@ const SongDuration = styled.div`
   display: flex;
   margin: 1rem;
 `
-
 const Add = styled.button`
   height: 2rem;
   width: 4rem;
-  border: 1px solid grey;
-  color: black;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
   font-size: 1rem;
   outline: none;
   border-radius: 45px;
-
   cursor: pointer;
+  transition: 0.3s ease-in-out;
   &:hover {
-    background-color: #799eab;
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s ease-in-out;
   }
 `;
 

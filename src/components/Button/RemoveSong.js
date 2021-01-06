@@ -33,16 +33,18 @@ const SongDuration = styled.div`
 const Remove = styled.button`
   height: 2rem;
   width: 5rem;
-  background-color: #deaead;
-  border: 0;
-  color: black;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
   font-size: 1rem;
   outline: none;
   border-radius: 45px;
-
   cursor: pointer;
+  transition: 0.3s ease-in-out;
   &:hover {
-    background-color: #bd8584;
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s ease-in-out;
   }
 `;
 
