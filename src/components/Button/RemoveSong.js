@@ -4,13 +4,12 @@ import { ListContextV2 } from '../../context/ListContextV2'
 import { SubtractTime } from '../../util/SubtractTime'
 
 const SongContainer = styled.div`
-  width: 70vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   /* margin-top: 0.5rem; */
-  border-bottom: solid #e6e6e6;
+  border-bottom: 1px solid grey;
   flex: 0.5;
   display: flex;
 `
@@ -32,7 +31,7 @@ const SongDuration = styled.div`
 `
 
 const Remove = styled.button`
-  height: 2.5rem;
+  height: 2rem;
   width: 5rem;
   background-color: #deaead;
   border: 0;

@@ -6,7 +6,6 @@ export function SubtractTime(currentDuration,RemovedSong){
     let secondRemainder = 0;
     currentDuration = currentDuration.split("  min  ");
     RemovedSong = RemovedSong.split(".");
-    console.log(RemovedSong,currentDuration)
     second = parseFloat(currentDuration[1]) - parseFloat(RemovedSong[1]);
     secondRemainder = second % 60;
     minute = parseFloat(currentDuration[0]) - parseFloat(RemovedSong[0]);

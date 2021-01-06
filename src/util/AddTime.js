@@ -6,7 +6,6 @@ export function AddTime(currentDuration,Addedsong){
     let secondRemainder = 0;
     currentDuration = currentDuration.split("  min  ");
     Addedsong = Addedsong.split(".");
-    console.log(Addedsong,currentDuration)
     second = parseFloat(currentDuration[1]) + parseFloat(Addedsong[1]);
     secondRemainder = second % 60;
     minute = parseFloat(currentDuration[0]) + parseFloat(Addedsong[0]);

@@ -4,13 +4,12 @@ import { ListContextV2 } from '../../context/ListContextV2'
 import { AddTime } from '../../util/AddTime'
 
 const SongContainer = styled.div`
-  width: 70vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   /* margin-top: 0.5rem; */
-  border-bottom: solid #e6e6e6;
+  border-bottom: 1px solid grey;
   flex: 0.5;
   display: flex;
 `
@@ -34,8 +33,7 @@ const SongDuration = styled.div`
 const Add = styled.button`
   height: 2rem;
   width: 4rem;
-  background-color: #a1bdc7;
-  border: 0;
+  border: 1px solid grey;
   color: black;
   font-size: 1rem;
   outline: none;

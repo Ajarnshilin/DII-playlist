@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.div`
-  margin-left: 3rem;
+margin: 3rem 3rem 0 3rem;
   font-size: 1.25rem;
   h2 {
     font-size: 2rem;
@@ -32,12 +32,10 @@ const Text = styled.div`
   }
 `;
 const SongContainer = styled.div`
-  width: 70vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* margin-top: 0.5rem; */
   border-bottom: solid #919496;
   flex: 0.5;
   display: flex;
@@ -118,7 +116,7 @@ const Refresh = styled.button`
   font-size: 1rem;
   outline: none;
   border-radius: 45px;
-  margin: 1rem;
+  margin: 3rem 3rem 3rem 3rem;
   cursor: pointer;
   &:hover {
     background-color: #c99c7d;
@@ -128,9 +126,7 @@ const Refresh = styled.button`
 const Footer = styled.div`
 display: flex;
 align-items: center;
-margin-bottom: 2rem;
 justify-content: center;
-margin-right: 5rem;
 `
 
 function Content() {
