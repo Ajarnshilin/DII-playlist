@@ -1,4 +1,5 @@
 import React from "react";
+import { Slide } from "react-awesome-reveal";
 import styled from "styled-components";
 import { ListContextV2 } from '../../context/ListContextV2'
 import { AddTime } from '../../util/AddTime'
@@ -57,11 +58,15 @@ function AddSong({props}) {
     setDogwow((dogwow) => AddTime(dogwow,time))
   }
     return (
-    <SongContainer key={props.id}>
+      
+    <SongContainer >
+      <Slide key={props.id}>
               <SongTitle>{props.title}</SongTitle>
               <SongArtist>{props.artist}</SongArtist>
               <SongDuration>{props.duration}</SongDuration>
+              
               <Add onClick={() => handleClick(props.id,props.duration)} >Add</Add>
+              </Slide>
     </SongContainer>
 )    
 }
