@@ -32,36 +32,7 @@ const AddedSongDuration = styled.div`
   margin: 1rem;
   color: grey;
 `
-const SongTitle = styled.div`
-  flex: 1;
-  display: flex;
-  margin: 1rem;
-`
-const SongArtist = styled.div`
-  flex: 1;
-  display: flex;
-  margin: 1rem;
-`
-const SongDuration = styled.div`
-  flex: 1;
-  display: flex;
-  margin: 1rem;
-`
-const Remove = styled.button`
-  height: 2.5rem;
-  width: 5rem;
-  background-color: #deaead;
-  border: 0;
-  color: black;
-  font-size: 1rem;
-  outline: none;
-  border-radius: 45px;
 
-  cursor: pointer;
-  &:hover {
-    background-color: #bd8584;
-  }
-`;
 function Playlist() {
     return (
         <>
