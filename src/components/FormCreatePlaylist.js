@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { storePlaylist } from "./../services/APIsong";
+import { ListContextV2 } from "../context/ListContextV2";
 
 
 const Container = styled.div`
@@ -59,54 +59,32 @@ const Title = styled.span`
   font-size: 1.5rem;
 `;
 
-function FormCreatePlaylist(callback) {
-  const [name ,setName] = useState("")
-  const [isSubmitting] = useState(false);
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setValues({
-  //     ...values,
-  //     [name]: value
-  //   });
-  // };
-
-  const handleSubmit = (e) => {
-    storePlaylist(name) 
-    // e.preventDefault();
-    // console.log(values,"1")
-    // PostAPI({...values, user_id: userId})
-    // console.log(userId)
+function FormCreatePlaylist() {
+  const {doge} = React.useContext(ListContextV2)
+  const {name , setName,modalIsOpen ,setModalIsOpen} = doge
+  const [value, setValue] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setName(() => [...name,value])
+    setValue("");
+    setModalIsOpen(false)
   };
+  const handleInputChange = (event) => setValue(event.target.value);
 
-  useEffect(() => {
-    if (isSubmitting) {
-      callback();
-    }
-  }, 
-  // []
-  );
 
   return (
-    <>
-      <Container>
-        <h1>Create Playlist</h1>
-        <Form onSubmit={handleSubmit}>
-          <Title>Name</Title>
+    <Form onSubmit={handleSubmit}>
+      <Title>Name</Title>
 
-          <Input
-            type="text"
-            name="playlist"
-            id="playlist"
-            // value={values.playlist}
-            onChange={ (e) => {setName(e.target.value)}}
-          ></Input>
-          <ButtonContainer>
-            <Button type="submit">Create</Button>
-          </ButtonContainer>
-        </Form>
-      </Container>
-    </>
+      <Input
+        type='text'
+        value={value}
+        onChange={handleInputChange}
+      ></Input>
+      <ButtonContainer>
+        <Button type="submit">Create</Button>
+      </ButtonContainer>
+    </Form>
   );
 }
 

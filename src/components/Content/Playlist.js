@@ -3,6 +3,7 @@ import styled from "styled-components";
 import RemoveSong from "../Button/RemoveSong";
 import songJson from "../../song.json"
 import { ListContextV2 } from '../../context/ListContextV2'
+import { Link } from 'react-router-dom'
 
 const SongContainer = styled.div`
   display: flex;
@@ -65,7 +66,6 @@ const Remove = styled.button`
 function Playlist() {
   const { doge } = React.useContext(ListContextV2)
   const { idSong, setIdSong, dogwow, setDogwow } = doge
-  console.log(idSong)
 
     return (
         <>
