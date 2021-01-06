@@ -7,6 +7,8 @@ import Modal from 'react-modal'
 Modal.setAppElement('#root')
 
 function App () {
+  localStorage.setItem('IdSong',[])
+  localStorage.setItem('time',0)
   return (
     <>
       <Reset />

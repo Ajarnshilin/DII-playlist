@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import RemoveSong from "../Button/RemoveSong";
 import songJson from "../../song.json"
+import { ListContextV2 } from '../../context/ListContextV2'
 
 const SongContainer = styled.div`
   width: 70vw;
@@ -63,6 +64,9 @@ const Remove = styled.button`
   }
 `;
 function Playlist() {
+  const { doge } = React.useContext(ListContextV2)
+  const { idSong, setIdSong, dogwow, setDogwow } = doge
+
     return (
         <>
         <SongContainer>
@@ -70,8 +74,14 @@ function Playlist() {
               <AddedSongArtist>NAME</AddedSongArtist>
               <AddedSongDuration>DURATION</AddedSongDuration>
         </SongContainer>
-        {songJson.slice(0,5).sort((a,b) => Math.random() - Math.random()).map((item, key) => (
-            <RemoveSong props={item}/>
+        {songJson.filter((item, index) => {
+          if(idSong === null){
+            return false
+          }
+          return item.id === idSong.find(element => element === item.id)
+        }
+        ).map((item, key) => (
+            <RemoveSong value={key} item={item}/>
         ))}
         </>
     )
