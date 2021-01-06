@@ -37,6 +37,7 @@ const AddedSongDuration = styled.div`
 function Playlist() {
   const { doge } = React.useContext(ListContextV2)
   const { idSong, setIdSong, dogwow, setDogwow } = doge
+  console.log(idSong)
 
     return (
         <>

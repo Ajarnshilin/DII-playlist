@@ -104,7 +104,7 @@ function FormCreatePlaylist(callback) {
             onChange={ (e) => {setName(e.target.value)}}
           ></Input>
           <ButtonContainer>
-            <Button type="submit">Create</Button>
+            <Button type="submit" onClick={ha}>Create</Button>
           </ButtonContainer>
         </Form>
       </Container>

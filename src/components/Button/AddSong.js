@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ListContextV2 } from '../../context/ListContextV2'
+import { AddTime } from '../../util/AddTime'
 
 const SongContainer = styled.div`
   width: 70vw;
@@ -56,7 +57,7 @@ function AddSong({props}) {
       return alert("มีเพลงนี้อยู่แล้ว")
     }
     setIdSong([...idSong,id])
-    setDogwow((dogwow) => dogwow+time)
+    setDogwow((dogwow) => AddTime(dogwow,time))
   }
     return (
     <SongContainer key={props.id}>
