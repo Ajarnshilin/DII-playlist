@@ -5,5 +5,10 @@ export default {
     path: '/',
     exact: true,
     component: lazy(() => import('../pages/Home'))
-  }
+  },
+  HomePage: {
+    path: '/:name',
+    exact: true,
+    component: lazy(() => import('../pages/Home'))
+  },
 }
