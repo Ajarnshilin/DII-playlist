@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
 import Modal from 'react-modal';
 import styled from "styled-components";
-// import { getPlaylist } from "./../services/APIsong";
-// import { storePlaylist } from "./../services/APIsong";
+import FormCreatePlaylist from './FormCreatePlaylist'
+import { ListContextV2 } from '../context/ListContextV2'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   width: 15%;
@@ -118,10 +118,10 @@ const Title = styled.span`
 
 
 
-function NavBar(callback) {
-  const [modalIsOpen ,setModalIsOpen ] = useState(false)
-
-
+function NavBar() {
+  const {doge} = React.useContext(ListContextV2)
+  const {name , setName,modalIsOpen ,setModalIsOpen} = doge
+  console.log(name)
   return (
     <Container>
       <Wrapper>
@@ -161,23 +161,10 @@ function NavBar(callback) {
                 <HeroText>Create Playlist</HeroText>
                 <Close onClick={() => setModalIsOpen(false)}>X</Close>
               </HeaderWrapper>
-                <Form 
-                >
-                  <Title>Name</Title>
-
-                  <Input
-                    type="text"
-                    name="playlist"
-                    id="playlist"
-                    // onChange={ (e) => {setName(e.target.value)}}
-                  ></Input>
-                  <ButtonContainer>
-                    <Button type="submit">Create</Button>
-                  </ButtonContainer>
-                </Form>
+                <FormCreatePlaylist/>
             </Modal>
           </Action>
-             {/* {play.map( (item) => (<p>{item.name}</p>))} */}
+             {name.map((item,key)=> <Link to={`/${name}`}><NewPlaylist  key={key}>{item}</NewPlaylist> </Link> )}
         </ActionContainer>
       </Wrapper>
     </Container>
