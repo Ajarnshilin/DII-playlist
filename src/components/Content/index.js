@@ -8,7 +8,7 @@ const Container = styled.div`
   width: 85%;
   height: 100%;
   background-color: #282828;
-  margin-left: 13.5rem;
+  margin-left: 15%;
   padding: 0;
   overflow-x: hidden;
   color:#fff;

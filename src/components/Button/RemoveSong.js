@@ -38,7 +38,7 @@ const Remove = styled.button`
   color: black;
   font-size: 1rem;
   outline: none;
-  border-radius: 50%;
+  border-radius: 45px;
 
   cursor: pointer;
   &:hover {
