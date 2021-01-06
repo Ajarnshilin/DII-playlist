@@ -38,17 +38,17 @@ const Input = styled.input`
 const Button = styled.button`
   height: 45px;
   width: 110px;
-  background-color: #4ca9ad;
-  margin-top: 30px;
-  border: 0;
-  color: black;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 45px;
   font-size: 20px;
   outline: none;
-  border-radius: 5px;
-
   cursor: pointer;
   &:hover {
-    background-color: #77c3c7;
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s ease-in-out;
   }
 `;
 
