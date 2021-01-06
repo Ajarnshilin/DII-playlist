@@ -61,14 +61,13 @@ function AddSong({props}) {
   }
     return (
       
-    <SongContainer >
-      <Slide key={props.id}>
+    <SongContainer key={props.id}>
+      
               <SongTitle>{props.title}</SongTitle>
               <SongArtist>{props.artist}</SongArtist>
               <SongDuration>{props.duration}</SongDuration>
               
               <Add onClick={() => handleClick(props.id,props.duration)} >Add</Add>
-              </Slide>
     </SongContainer>
 )    
 }
