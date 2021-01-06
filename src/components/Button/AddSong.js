@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ListContextV2 } from '../../context/ListContextV2'
 
 const SongContainer = styled.div`
   width: 70vw;
@@ -47,12 +48,22 @@ const Add = styled.button`
 `;
 
 function AddSong({props}) {
+  const { doge } = React.useContext(ListContextV2)
+  const { idSong, setIdSong, dogwow, setDogwow } = doge
+
+  const handleClick = (id,time) => {
+    if(idSong.find(element => element === id) ){
+      return alert("มีเพลงนี้อยู่แล้ว")
+    }
+    setIdSong([...idSong,id])
+    setDogwow((dogwow) => dogwow+time)
+  }
     return (
     <SongContainer key={props.id}>
               <SongTitle>{props.title}</SongTitle>
               <SongArtist>{props.artist}</SongArtist>
               <SongDuration>{props.duration}</SongDuration>
-              <Add type="submit">Add</Add>
+              <Add onClick={() => handleClick(props.id,props.duration)} >Add</Add>
     </SongContainer>
 )    
 }

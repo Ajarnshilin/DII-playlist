@@ -58,6 +58,10 @@ margin-right: 5rem;
 `
 
 function Content() {
+  const [state, setState] = React.useState(0)
+  const dogeCheems = () =>{
+    setState((state) => state+1)
+  }
   return (
     <Container>
       <Wrapper>
@@ -65,10 +69,10 @@ function Content() {
           <Header/>
           <Playlist/>
           <h2>Recommended Songs</h2>
-          <Recommend/>
+          <Recommend value={state}/>
         </Text>
         <Footer>
-          <Refresh type="submit">Refresh</Refresh>
+          <Refresh onClick={dogeCheems} >Refresh</Refresh>
         </Footer>
       </Wrapper>
     </Container>

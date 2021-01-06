@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ListContextV2 } from '../../context/ListContextV2'
 
 const Head = styled.div`
   margin: 2rem 0 2rem 0;
@@ -33,14 +34,18 @@ const Pic = styled.div`
 `;
 
 function Header() {
+  const name ="Hello.spilt('')"
+  const text=name[0]
+  const { doge } = React.useContext(ListContextV2)
+  const { idSong, setIdSong, dogwow, setDogwow } = doge
     return (
         <Head>
             <Pic>
-                <span>M</span>
+                <span>{text}</span>
             </Pic>
             <RightHeader>
                 <h1>MY PLAYLIST</h1>
-                <span>CREART BY Ajarnshilin: 2 song ,7 min 44 sec</span>
+                <span>CREART BY Ajarnshilin: {dogwow}</span>
             </RightHeader>
         </Head>
     );
