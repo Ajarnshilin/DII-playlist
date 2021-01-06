@@ -66,6 +66,7 @@ const Remove = styled.button`
 function Playlist() {
   const { doge } = React.useContext(ListContextV2)
   const { idSong, setIdSong, dogwow, setDogwow } = doge
+  console.log(idSong)
 
     return (
         <>

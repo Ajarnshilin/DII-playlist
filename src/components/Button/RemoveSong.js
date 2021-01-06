@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ListContextV2 } from '../../context/ListContextV2'
+import { SubtractTime } from '../../util/SubtractTime'
 
 const SongContainer = styled.div`
   width: 70vw;
@@ -53,7 +54,7 @@ function RemoveSong(props) {
   const handleClick = (id,time) => {
     console.log(id)
     setIdSong((idSong) => idSong.filter(e => e !== id))
-    setDogwow((dogwow) => dogwow-time)
+    setDogwow((dogwow) => SubtractTime(dogwow,time))
   }
     return (
     <SongContainer >

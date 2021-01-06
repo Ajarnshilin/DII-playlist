@@ -5,7 +5,7 @@ export const ListContextV2 = createContext({})
 export function ListProvider({ children }) {
 
     const [ idSong, setIdSong] = useState([])
-    const [ dogwow, setDogwow ] = useState(0)
+    const [ dogwow, setDogwow ] = useState("0  min  0")
 
 
     const doge = { idSong: idSong, setIdSong: setIdSong, dogwow: dogwow, setDogwow: setDogwow   }
