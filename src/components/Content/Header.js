@@ -1,7 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { ListContextV2 } from '../../context/ListContextV2'
+import Cherry from '../../assets/cherry.jpeg'
+import Brick from '../../assets/brick.jpeg'
+import Leaf from '../../assets/leaf.jpeg'
+import Scale from '../../assets/scale.jpeg'
 
+const bg = {
+  backgroundImage: `url(${Brick})`,
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover"
+};
 const Head = styled.div`
   margin-bottom: 2rem;
   display: flex;
@@ -19,9 +28,8 @@ const RightHeader = styled.div`
 const Pic = styled.div`
   width: 10rem;
   height: 10rem;
-  background-color: #f5ce7a;
+  backgroundImage: 'url(${Cherry})';
   padding: 2rem;
-  
   span {
     font-size: 10rem;
     font-weight: 600;
@@ -38,8 +46,8 @@ function Header() {
   const text=nameless[0]
     return (
         <Head>
-            <Pic>
-                <span>{text}</span>
+            <Pic className="wrapper" style={bg}>
+              <span>{text}</span>
             </Pic>
             <RightHeader>
                 <h1>{name[0]}</h1>
