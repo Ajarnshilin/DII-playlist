@@ -1,12 +1,15 @@
-import moment from "moment";
+import moment from 'moment';
 
 export function SubtractTime(currentDuration,RemovedSong){
-  var momentInTime = moment(currentDuration, "m:ss")
-  .subtract(RemovedSong, "seconds")
-  .subtract(RemovedSong, "minutes")
-  .format("m:ss");
-  momentInTime= momentInTime.split(":")
-  momentInTime =momentInTime[0]+ "min" +momentInTime[1]
+  
+  currentDuration = currentDuration.toString()
+  RemovedSong = RemovedSong.toString()
+  RemovedSong = RemovedSong.split(".");
 
+  let momentInTime = moment(currentDuration, 'mm:ss')
+  .subtract(RemovedSong, 'seconds')
+  .subtract(RemovedSong, 'minutes')
+  .format('mm:ss');
+  
   return momentInTime;
 }
