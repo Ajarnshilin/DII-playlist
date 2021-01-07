@@ -7,8 +7,8 @@ export function SubtractTime(currentDuration,RemovedSong){
   RemovedSong = RemovedSong.split(".");
 
   let momentInTime = moment(currentDuration, 'mm:ss')
-  .subtract(RemovedSong, 'seconds')
-  .subtract(RemovedSong, 'minutes')
+  .subtract(RemovedSong[1], 'seconds')
+  .subtract(RemovedSong[0], 'minutes')
   .format('mm:ss');
   
   return momentInTime;
