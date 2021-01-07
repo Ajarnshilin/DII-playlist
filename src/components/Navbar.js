@@ -41,6 +41,7 @@ const Close = styled.div`
   flex-direction: column;
   align-items: right;
   cursor: pointer;
+  color: #fff;
 `;
 
 const HeroText = styled.span`
@@ -92,17 +93,17 @@ const Input = styled.input`
 const Button = styled.button`
   height: 45px;
   width: 110px;
-  background-color: #8dc6c6;
-  margin-top: 30px;
-  border: 0;
-  color: black;
+  order: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
   font-size: 20px;
   outline: none;
   border-radius: 5px;
-
   cursor: pointer;
   &:hover {
-    background-color: #6aacac;
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s ease-in-out;
   }
 `;
 
