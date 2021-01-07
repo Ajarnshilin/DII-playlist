@@ -151,7 +151,7 @@ function NavBar() {
                   right: "30%",
                   bottom: "30%",
                   border: "1px solid #000",
-                  background: "#c5d9d6",
+                  background: "#c7132b",
                   overflow: "fixed",
                   WebkitOverflowScrolling: "touch",
                   borderRadius: "4px",

@@ -25,12 +25,17 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 const RightHeader = styled.div`
-  margin-top: 25rem;
+  margin-top: 18rem;
   margin-left: 25rem;
   h1 {
     font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-left: 15rem;
+    margin-bottom: 0.5rem;
   }
 `;
 const Button = styled.button`
@@ -77,6 +82,20 @@ const NewPlaylist = styled.span`
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+`;
+const PlayListUser = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  flex: 0.5;
+  display: flex;
+  margin-right: 25rem;
+`;
+const UserPlayList = styled.div`
+  font-size: 2rem;
+  margin: 1rem 3rem 0 18rem;
 `;
 
 function Content() {
@@ -126,11 +145,15 @@ function Content() {
             </HeaderWrapper>
             <FormCreatePlaylist />
           </Modal>
-          {name.map((item, key) => (
-            <Link to={`/home`}>
-              <NewPlaylist key={key}>{item}</NewPlaylist>{" "}
-            </Link>
-          ))}
+          <h2>Your Playlist </h2>
+          <PlayListUser></PlayListUser>
+          <UserPlayList>
+            {name.map((item, key) => (
+              <Link to={`/home`}>
+                <NewPlaylist key={key}>{item}</NewPlaylist>{" "}
+              </Link>
+            ))}
+          </UserPlayList>
         </RightHeader>
       </Wrapper>
     </Container>
