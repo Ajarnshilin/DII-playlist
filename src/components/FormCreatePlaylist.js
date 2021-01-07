@@ -36,19 +36,21 @@ const Input = styled.input`
   }
 `;
 const Button = styled.button`
-  height: 45px;
-  width: 110px;
-  background-color: #4ca9ad;
-  margin-top: 30px;
-  border: 0;
-  color: black;
-  font-size: 20px;
+   height: 3rem;
+  width: 9rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 1rem;
   outline: none;
-  border-radius: 5px;
-
+  border-radius: 45px;
+  margin-right: 30rem;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
   &:hover {
-    background-color: #77c3c7;
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s ease-in-out;
   }
 `;
 
@@ -57,6 +59,7 @@ const Title = styled.span`
   justify-content: left;
   align-items: center;
   font-size: 1.5rem;
+  color: white;
 `;
 
 function FormCreatePlaylist() {
