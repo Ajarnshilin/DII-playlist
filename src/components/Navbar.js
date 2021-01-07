@@ -37,12 +37,14 @@ const Close = styled.div`
   flex-direction: column;
   align-items:right;
   cursor: pointer;
+  color: #fff;
 `;
 
 const HeroText = styled.span`
   font-size:2rem;
   font-weight:bold;
   margin-bottom:2rem;
+  color: #fff;
 `;
 
 const Wrapper = styled.div`
@@ -88,17 +90,17 @@ const Input = styled.input`
 const Button = styled.button`
   height: 45px;
   width: 110px;
-  background-color: #8dc6c6;
-  margin-top: 30px;
-  border: 0;
-  color: black;
+  order: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
   font-size: 20px;
   outline: none;
   border-radius: 5px;
-
   cursor: pointer;
   &:hover {
-    background-color: #6aacac;
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s ease-in-out;
   }
 `;
 
@@ -145,8 +147,8 @@ function NavBar() {
                   left: '30%',
                   right: '30%',
                   bottom: '30%',
-                  border: '1px solid #000',
-                  background: '#c5d9d6',
+                  border: '1px solid grey',
+                  background: '#000',
                   overflow: 'fixed',
                   WebkitOverflowScrolling: 'touch',
                   borderRadius: '4px',
